@@ -1,0 +1,9 @@
+{
+	"name": "Project101-dev-adf2",
+	"location": "northeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e544d361-d716-4822-9667-c164d0ba71a3",
+		"tenantId": "10c468a6-a5e9-4718-8edf-30da5a39ff2d"
+	}
+}
