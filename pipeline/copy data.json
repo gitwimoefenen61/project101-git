@@ -98,7 +98,7 @@
 				}
 			},
 			{
-				"name": "Wait1",
+				"name": "Wai  2",
 				"type": "Wait",
 				"dependsOn": [
 					{
@@ -110,7 +110,7 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"waitTimeInSeconds": 1
+					"waitTimeInSeconds": 2
 				}
 			}
 		],
