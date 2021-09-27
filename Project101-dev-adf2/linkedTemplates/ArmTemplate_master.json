@@ -15,6 +15,10 @@
 			"type": "string",
 			"defaultValue": "https://project101-dev-kv1.vault.azure.net/"
 		},
+		"trigger2_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/82a2edb1-a2f7-4d8a-b231-ad331349c54e/resourceGroups/project101-dev-rg/providers/Microsoft.Storage/storageAccounts/project101devsa1"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -44,6 +48,9 @@
 					},
 					"LS_AzureKeyVault_dev_properties_typeProperties_baseUrl": {
 						"value": "[parameters('LS_AzureKeyVault_dev_properties_typeProperties_baseUrl')]"
+					},
+					"trigger2_properties_typeProperties_scope": {
+						"value": "[parameters('trigger2_properties_typeProperties_scope')]"
 					},
 					"LS_AzureBlobStorage_dev_properties_typeProperties_connectionString_secretName": {
 						"value": "[parameters('LS_AzureBlobStorage_dev_properties_typeProperties_connectionString_secretName')]"
