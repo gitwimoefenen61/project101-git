@@ -429,8 +429,16 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Stopped",
-				"pipelines": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "pipeline event trigger",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
 				"type": "BlobEventsTrigger",
 				"typeProperties": {
 					"blobPathBeginsWith": "/input/blobs/",
@@ -441,7 +449,9 @@
 					]
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pipeline event trigger')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/pipeline event trigger')]",
@@ -467,6 +477,7 @@
 								"storeSettings": {
 									"type": "AzureBlobStorageReadSettings",
 									"recursive": true,
+									"wildcardFileName": "*",
 									"enablePartitionDiscovery": false
 								},
 								"formatSettings": {
@@ -496,7 +507,7 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "DS_input_trigger",
+								"referenceName": "DS_input_event_triggger",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -517,8 +528,35 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_input_trigger')]",
+				"[concat(variables('factoryId'), '/datasets/DS_input_event_triggger')]",
 				"[concat(variables('factoryId'), '/datasets/DS_output_trigger')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_input_event_triggger')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_AzureBlobStorage_dev",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "input"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_AzureBlobStorage_dev')]"
 			]
 		}
 	]
