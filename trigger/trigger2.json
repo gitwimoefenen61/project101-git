@@ -8,6 +8,9 @@
 				"pipelineReference": {
 					"referenceName": "pipeline event trigger",
 					"type": "PipelineReference"
+				},
+				"parameters": {
+					"FileName": "@triggerBody().FileName"
 				}
 			}
 		],
