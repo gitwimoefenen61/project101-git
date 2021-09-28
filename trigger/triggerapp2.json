@@ -2,7 +2,7 @@
 	"name": "triggerapp2",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Stopped",
+		"runtimeState": "Started",
 		"type": "TumblingWindowTrigger",
 		"typeProperties": {
 			"frequency": "Minute",
