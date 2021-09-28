@@ -11,6 +11,9 @@
 		"LS_AzureKeyVault_dev_properties_typeProperties_baseUrl": {
 			"value": "https://project101-dev-kv1.vault.azure.net/"
 		},
+		"trigger2_properties_pipeline event trigger_parameters_FileName": {
+			"value": "@triggerBody().FileName"
+		},
 		"trigger2_properties_typeProperties_scope": {
 			"value": "/subscriptions/82a2edb1-a2f7-4d8a-b231-ad331349c54e/resourceGroups/project101-dev-rg/providers/Microsoft.Storage/storageAccounts/project101devsa1"
 		}

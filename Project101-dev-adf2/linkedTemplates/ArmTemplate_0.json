@@ -15,6 +15,10 @@
 			"type": "string",
 			"defaultValue": "Dev-SA-Access-Secret"
 		},
+		"trigger2_properties_pipeline event trigger_parameters_FileName": {
+			"type": "string",
+			"defaultValue": "@triggerBody().FileName"
+		},
 		"trigger2_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/82a2edb1-a2f7-4d8a-b231-ad331349c54e/resourceGroups/project101-dev-rg/providers/Microsoft.Storage/storageAccounts/project101devsa1"
@@ -585,7 +589,9 @@
 							"referenceName": "pipeline event trigger",
 							"type": "PipelineReference"
 						},
-						"parameters": {}
+						"parameters": {
+							"FileName": "[parameters('trigger2_properties_pipeline event trigger_parameters_FileName')]"
+						}
 					}
 				],
 				"type": "BlobEventsTrigger",

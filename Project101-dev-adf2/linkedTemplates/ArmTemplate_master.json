@@ -15,6 +15,10 @@
 			"type": "string",
 			"defaultValue": "https://project101-dev-kv1.vault.azure.net/"
 		},
+		"trigger2_properties_pipeline event trigger_parameters_FileName": {
+			"type": "string",
+			"defaultValue": "@triggerBody().FileName"
+		},
 		"trigger2_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/82a2edb1-a2f7-4d8a-b231-ad331349c54e/resourceGroups/project101-dev-rg/providers/Microsoft.Storage/storageAccounts/project101devsa1"
@@ -51,6 +55,9 @@
 					},
 					"LS_AzureBlobStorage_dev_properties_typeProperties_connectionString_secretName": {
 						"value": "[parameters('LS_AzureBlobStorage_dev_properties_typeProperties_connectionString_secretName')]"
+					},
+					"trigger2_properties_pipeline event trigger_parameters_FileName": {
+						"value": "[parameters('trigger2_properties_pipeline event trigger_parameters_FileName')]"
 					},
 					"trigger2_properties_typeProperties_scope": {
 						"value": "[parameters('trigger2_properties_typeProperties_scope')]"
